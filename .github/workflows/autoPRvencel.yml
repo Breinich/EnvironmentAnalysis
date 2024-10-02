@@ -21,5 +21,4 @@ jobs:
           branch: vencel-promotion
 
       - name: Enable Pull Request Automerge
-        run: gh pr merge --merge --auto "1"
-          
+        run: gh pr merge --merge --auto "1" --delete-branch

@@ -1,0 +1,28 @@
+name: auto update asel from main
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: asel
+      - name: Reset promotion branch
+        run: |
+          git fetch origin main:main
+          git reset --hard main
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: asel-promotion
+          commit-message: Merge changes
+          title: Update contributor branch
+
+      - name: Enable Pull Request Automerge
+        run: gh pr merge --merge --auto "1" --delete-branch
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}

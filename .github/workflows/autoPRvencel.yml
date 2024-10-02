@@ -23,6 +23,6 @@ jobs:
           title: VENCEL to update
 
       - name: Enable Pull Request Automerge
-        run: gh pr merge vencel-promotion --merge --delete-branch --auto
+        run: gh pr merge vencel-promotion --rebase --delete-branch --auto
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

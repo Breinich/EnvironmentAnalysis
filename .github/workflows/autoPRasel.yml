@@ -20,9 +20,9 @@ jobs:
         with:
           branch: asel-promotion
           commit-message: Merge changes
-          title: Update contributor branch
+          title: ASEL to update
 
       - name: Enable Pull Request Automerge
-        run: gh pr merge --merge --auto "1" --delete-branch
+        run: gh pr merge asel-promotion --merge --auto --delete-branch
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

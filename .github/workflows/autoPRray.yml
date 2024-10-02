@@ -20,9 +20,9 @@ jobs:
         with:
           branch: ray-promotion
           commit-message: Merge changes
-          title: Update contributor branch
+          title: RAY to update
 
       - name: Enable Pull Request Automerge
-        run: gh pr merge --merge --auto "1" --delete-branch
+        run: gh pr merge ray-promotion --merge --auto --delete-branch
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

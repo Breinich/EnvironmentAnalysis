@@ -23,6 +23,6 @@ jobs:
           title: RAY to update
 
       - name: Enable Pull Request Automerge
-        run: gh pr merge ray-promotion --merge --auto --delete-branch
+        run: gh pr merge ray-promotion --rebase --delete-branch
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

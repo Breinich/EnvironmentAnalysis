@@ -1,4 +1,4 @@
-name: auto PR from main to vencel
+name: auto update vencel from main
 
 on:
   push:
@@ -8,7 +8,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: vencel
       - name: Reset promotion branch
@@ -19,3 +19,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           branch: vencel-promotion
+
+      - name: Enable Pull Request Automerge
+        run: gh pr merge --merge --auto "1"
+          

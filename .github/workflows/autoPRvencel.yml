@@ -19,6 +19,8 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           branch: vencel-promotion
+          commit-message: Merge changes
+          title: Update contributor branch
 
       - name: Enable Pull Request Automerge
         run: gh pr merge --merge --auto "1" --delete-branch

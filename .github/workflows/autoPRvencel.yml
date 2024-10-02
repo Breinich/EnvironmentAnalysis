@@ -20,9 +20,9 @@ jobs:
         with:
           branch: vencel-promotion
           commit-message: Merge changes
-          title: Update contributor branch
+          title: VENCEL to update
 
       - name: Enable Pull Request Automerge
-        run: gh pr merge --merge --auto "1" --delete-branch
+        run: gh pr merge --merge --auto "1" --delete-branch --admin
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

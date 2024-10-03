@@ -1,0 +1,45 @@
+name: Fix Tableau File Paths
+
+on:
+  push:
+    paths:
+      - '**/*.twb'
+  pull_request:
+    paths:
+      - '**/*.twb'
+
+jobs:
+  fix-paths:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Fix paths in .twb files
+      - name: Fix Tableau file paths
+        run: |
+          # Find all .twb files and update the directory path
+          for file in $(find . -name '*.twb'); do
+            if [ -f "$file" ]; then
+              echo "Fixing path in $file"
+              sed -i -E "s#directory='(/[a-zA-Z0-9_./-]+)'#directory='../cleaned_data'#" "$file"
+            fi
+          done
+
+      # Step 3: Commit changes if any
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git diff --quiet || git commit -m "Fixed directory paths in .twb files"
+        if: |
+          (git diff --quiet == false)
+
+      # Step 4: Push changes back to the repository
+      - name: Push changes
+        uses: ad-m/github-push-action@v1
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}

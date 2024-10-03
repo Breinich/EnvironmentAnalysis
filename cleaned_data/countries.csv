@@ -121,7 +121,7 @@ PYF,French Polynesia,Oceania
 NIU,Niue,Oceania
 LCA,Saint Lucia,Americas
 MUS,Mauritius,Africa
-SOM,Somalia,Africa
+SOM,Somaliland region,Somaliland region
 THA,Thailand,Asia
 PRY,Paraguay,Americas
 KEN,Kenya,Africa
@@ -184,7 +184,7 @@ GEO,Georgia,Asia
 MHL,Marshall Islands (the),Oceania
 KGZ,Kyrgyzstan,Asia
 LTU,Lithuania,Europe
-RUS,Russian Federation (the),Europe
+RUS,Russia,Russia
 ERI,Eritrea,Africa
 MKD,Macedonia (the former Yugoslav Republic of),Europe
 KAZ,Kazakhstan,Asia
@@ -227,3 +227,11 @@ BLM,Saint Barthélemy,Americas
 MAF,Saint Martin (French Part),Americas
 SXM,Sint Maarten (Dutch part),Americas
 IMN,Isle of Man,Europe
+XKX,Kosovo,Kosovo
+ALA,Åland,Åland
+BK,Baker Island,Baker Island
+MF,Saint Martin,Saint Martin
+SX,Sint Maarten,Sint Maarten
+PL,Palmyra Atoll,Palmyra Atoll
+MO,Macau,Macau
+KR,Kingman Reef,Kingman Reef

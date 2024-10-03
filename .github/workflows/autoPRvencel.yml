@@ -24,6 +24,6 @@ jobs:
 
       - name: Enable Pull Request Automerge
         run: |
-          gh pr merge vencel-promotion --rebase --delete-branch || gh pr merge vencel-promotion --merge --auto --delete-branch
+          gh pr merge vencel-promotion --rebase --delete-branch || gh pr merge vencel-promotion --merge --delete-branch
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

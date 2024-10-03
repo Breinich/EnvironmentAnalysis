@@ -31,15 +31,18 @@ jobs:
       # Step 3: Commit changes if any
       - name: Commit changes
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git diff --quiet || git commit -m "Fixed directory paths in .twb files"
-        if: |
-          (git diff --quiet == false)
+          if ! git diff --cached --quiet; then
+            gh commit -m "Fixed directory paths in .twb files"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       # Step 4: Push changes back to the repository
       - name: Push changes
-        uses: ad-m/github-push-action@v1
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
+        run: |
+          if ! git diff --cached --quiet; then
+            gh repo sync
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}

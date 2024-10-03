@@ -23,6 +23,6 @@ jobs:
           title: ASEL to update
 
       - name: Enable Pull Request Automerge
-        run: gh pr merge asel-promotion --rebase --delete-branch || gh pr merge asel-promotion --merge --auto --delete-branch
+        run: gh pr merge asel-promotion --rebase --delete-branch || gh pr merge asel-promotion --merge --delete-branch
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

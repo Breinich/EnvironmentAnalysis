@@ -26,7 +26,7 @@ jobs:
               echo "Fixing path in $file"
               sed -i -E "
                 s#directory='(/[a-zA-Z0-9_./-]+)'#directory='../cleaned_data'#; 
-                s#directory='([A-Za-z]:\\\\[\\\\/a-zA-Z0-9_./-]+)'#directory='../cleaned_data'#
+                s#directory='([A-Za-z]:[\\\\/a-zA-Z0-9_./-]+)'#directory='../cleaned_data'#
               " "$file"
             fi
           done

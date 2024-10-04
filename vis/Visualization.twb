@@ -40,7 +40,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='disaster_cleaned' name='textscan.07b619k0gwkw7h17tyviv0h2njj3'>
-            <connection class='textscan' directory='D:/repos/Environment-Analysis/cleaned_data' filename='disaster_cleaned.csv' password='' server='' />
+            <connection class='textscan' directory='D:/repos/EnvironmentAnalysis/cleaned_data' filename='disaster_cleaned.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.07b619k0gwkw7h17tyviv0h2njj3' name='countries.csv' table='[countries#csv]' type='table'>

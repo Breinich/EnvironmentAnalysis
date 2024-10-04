@@ -36,11 +36,9 @@ jobs:
         run: |
           git add .
           if ! git diff --cached --quiet; then
-            gh commit -m "Fixed directory paths in .twb files"
+            git commit -m "Fixed directory paths in .twb files"
           fi
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
+          
       # Step 4: Push changes back to the repository
       - name: Push changes
         run: |
